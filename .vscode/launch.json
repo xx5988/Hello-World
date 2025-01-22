@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/hello_world", // 可执行文件路径
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "miDebuggerPath": "${extensionInstallFolder:ms-vscode.cpptools}/debugAdapters/lldb-mi/bin/lldb-mi", // lldb-mi路径:/Users/jaycez/.vscode/extensions/ms-vscode.cpptools-1.22.11-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "settings set target.pretty-printing true",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build", // 预启动任务，确保程序已编译
+            "logging": {
+                "engineLogging": true
+            }
+        }
+    ]
+}

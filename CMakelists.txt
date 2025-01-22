@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.12)
+
+# 项目名称
+project(hello_world)
+
+# 设置 C++ 标准
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+
+
+# 添加可执行文件
+add_executable(hello_world 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/hello_world.cpp
+)
+
+# 添加包含文件目录
+target_include_directories(hello_world PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/)
+
+# 添加其他依赖库
+# target_link_libraries(MyExecutable SomeLibrary)
+
+# 添加包含文件目录
+# target_include_directories(MyExecutable PUBLIC include)
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+#设置可执行文件生成目录
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
+#设置库生成目录
+#set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
